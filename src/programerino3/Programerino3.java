@@ -22,34 +22,11 @@ public class Programerino3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        Charset text = Charset.forName("UTF-8");
-        Path base = Paths.get("Input/Input.txt");
-        String line = "";
-        String splitBy = ",";
-        int[][] graph;
-        try (BufferedReader reader = Files.newBufferedReader(base, text)) {
-            String firstLine = reader.readLine();
-            String[] firstLineArray = firstLine.split(splitBy);
-            graph = new int[firstLineArray.length][firstLineArray.length];
-            //double embedded for loop but slightly different
-            int row =0;
-            while ((line = reader.readLine()) != null) { 
-               String[] holder = line.split(splitBy);
-            for(int i = 0; holder.length > i; i++)
-            {
-                //infinity sign = 8734
-                //i is the spot we are at for looping in the columns
-                if((int)holder[i].charAt(0) == 8734)
-                {
-                    graph[row][i] = Integer.MAX_VALUE;
-                }
-                else{
-                    graph[row][i] = Integer.parseInt(holder[i]);
-                }
-            } 
-            row++;
-            }
+        MatrixGraph mg = new MatrixGraph();
+        mg.build();
+        mg.primAlgorithm1();
+        mg.kruskalAlgorithm2();
+        mg.floydAlgorithm3();
+        mg.printMatrix();
     }
-    
-}
 }
