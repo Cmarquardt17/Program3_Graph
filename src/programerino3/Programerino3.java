@@ -24,9 +24,11 @@ public class Programerino3 {
     public static void main(String[] args) throws IOException {
         MatrixGraph mg = new MatrixGraph();
         mg.build();
-        mg.primAlgorithm1();
+        int[][] x = mg.primAlgorithm1();
+        mg.printMatrix(x);
+        mg.finalOutput(x, 0);
         mg.kruskalAlgorithm2();
         mg.floydAlgorithm3();
-        mg.printMatrix();
+        //mg.printMatrix(x);
     }
 }
