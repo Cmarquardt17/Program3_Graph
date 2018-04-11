@@ -1,4 +1,5 @@
 /*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -31,6 +32,7 @@ public class Programerino3 {
         mg.printMatrix(y, "Kruskal");
         mg.finalOutput(y, 0);
        // mg.kruskalAlgorithm2();
+        mg.printMatrix(y, "Floyds");
         mg.floydAlgorithm3();
         //mg.printMatrix(x);
     }
