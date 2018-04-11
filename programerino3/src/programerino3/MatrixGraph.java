@@ -232,8 +232,52 @@ public class MatrixGraph {
         }
         return graph2; //returns final graph
     }
-
-    public void floydAlgorithm3() {
-
-    }
+   
+    public void floydAlgorithm3() 
+    {
+    	for(int i = 0; i < graph.length; i++){ 
+            for(int j = 0; j < graph[0].length; j++){
+            	i++;
+            }
+         }
+    		
+	    	for (int row = 0; row < graph.length; row++) 
+	    	{
+	            for (int col = 0; col < graph.length; col++) 
+	            {
+	            			for(int red = 0; red < graph.length; red++)
+	            			{
+	            				if(graph[col][red] > graph[row][col] + graph[red][row])
+	            				{
+	            					graph[col][red] = graph[row][col] + graph[red][row];
+	            				}
+	            			}
+	                System.out.print(graph[row][col] + " ");
+	            }  
+	    		}
+	    }
+}
+    /*    	
+	public void floyd()
+	{
+		int[][]tempMatrix = graph;
+		 System.out.print(graph);
+		for(int k = 0; k < graph.length; k++ )
+		{
+			for(int i = 0; i <graph.length; i++)
+			{
+				for(int j = 0; j <graph.length; j++)
+				{
+					if (graph[i][j] > graph[i][k] + graph[k][j])
+							{
+						graph[i][j] = graph[i][k] + graph[k][j];
+						 System.out.print(graph[i][j] + " ");
+							}
+				}
+				System.out.print(graph);
+			}
+		}	
+	}
+*/
+    	
 }
